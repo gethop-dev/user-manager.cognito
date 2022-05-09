@@ -125,9 +125,9 @@ And it may include more keys that are specific to the method.
 If the operation is not successful it will always return the following additional keys in the map:
 * `:reason`: a string with the description about the error.
 * `:error-details`: which is a map with the following keys:
- * `:type`: the exception type.
- * `:message`: same as `:reason`.
- * `:category`: a keyword indicating the error type defined by the underlying client library.
+  * `:type`: the exception type.
+  * `:message`: same as `:reason`.
+  * `:category`: a keyword indicating the error type defined by the underlying client library.
 
 ### Creating an user
 
@@ -150,10 +150,10 @@ For more elaborate and complete description of all these parameters please refer
 Example:
 
 ``` clj
-user> (core/create-user cognito "foo@bar.barz" {:desired-delivery-mediums :email
-                                                                   :standard-attributes {:email "foo@bar.barz"
-                                                                                         :email-verified true
-                                                                                         :name "foo"}})
+user> (core/create-user cognito-record "foo@bar.barz" {:desired-delivery-mediums :email
+                                                       :standard-attributes {:email "foo@bar.barz"
+                                                                             :email-verified true
+                                                                             :name "foo"}})
 {:user
  {:username "ff583035-f994-45cb-af2a-76fc28e5b4e5",
   :attributes
@@ -179,7 +179,7 @@ To get an user it requires:
 Example:
 
 ``` clj
-user> (core/get-user r "foo@bar.barz")
+user> (core/get-user cognito-record "foo@bar.barz")
 {:success? true,
  :user
  {:user-status :force-change-password,
@@ -205,7 +205,7 @@ Both operations accepts the same parameters:
 Example:
 
 ``` clj
-user> (core/disable-user cognito "foo@bar.barz")
+user> (core/disable-user cognito-record "foo@bar.barz")
 {:success? true}
 ```
 
@@ -218,7 +218,7 @@ To delete an user it requires:
 Example:
 
 ``` clj
-user> (core/delete-user cognito "foo@bar.barz")
+user> (core/delete-user cognito-record "foo@bar.barz")
 {:success? true}
 ```
 
