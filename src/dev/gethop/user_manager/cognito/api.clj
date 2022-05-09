@@ -141,6 +141,8 @@
 
 (defn- get-user
   [{:keys [client user-pool-id] :as this} username]
+  {:pre [(s/valid? ::core/this this)
+         (s/valid? ::core/username username)]}
   (let [result (util/->map-kebab-case
                 (aws/invoke client {:op :AdminGetUser
                                     :request {:UserPoolId user-pool-id
