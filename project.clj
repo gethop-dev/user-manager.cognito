@@ -27,6 +27,8 @@
                            [lein-cljfmt "0.6.2"]]
                  :dependencies [[com.cognitect.aws/sts "822.2.1109.0"]]
                  :eastwood {:linters [:all]
+                            :source-paths ["src"]
+                            :test-paths ["test"]
                             :exclude-linters [:keyword-typos
                                               :boxed-math
                                               :non-clojure-file
