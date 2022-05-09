@@ -29,6 +29,7 @@
                  :eastwood {:linters [:all]
                             :source-paths ["src"]
                             :test-paths ["test"]
+                            :config-files ["eastwood_config.clj"]
                             :exclude-linters [:keyword-typos
                                               :boxed-math
                                               :non-clojure-file
