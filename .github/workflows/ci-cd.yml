@@ -1,19 +1,20 @@
-name: ci
+name: ci-cd
 on:
   push:
-    paths_ignore:
+    paths-ignore:
       - "README.md"
       - "CONTRIBUTING.md"
       - "CHANGELOG.md"
-      - "LICENSE.md"
+      - "LICENSE"
       - ".gitignore"
-
 jobs:
   build:
     name: Build
     runs-on: ubuntu-20.04
     env:
       LEIN_ROOT: "true"
+      CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+      CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
       AWS_ACCESS_KEY_ID: ${{ secrets.TEST_USER_MANAGER_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.TEST_USER_MANAGER_AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ${{ secrets.TEST_USER_MANAGER_AWS_DEFAULT_REGION }}
@@ -39,8 +40,15 @@ jobs:
         with:
           version: '2020.04.05'
 
+      - name: Check formatting
+        run: lein cljfmt check
+
       - name: Lint
         run: clj-kondo --lint src --lint test && lein eastwood
 
       - name: Test
         run: lein test :all
+
+      - name: Deploy Jar to Clojars
+        if: contains(github.ref, 'refs/tags/')
+        run: lein deploy
