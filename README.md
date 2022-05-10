@@ -1,3 +1,5 @@
+[![ci-cd](https://github.com/gethop-dev/user-manager.cognito/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/gethop-dev/user-manager.cognito/actions/workflows/ci-cd.yml)
+[![Clojars Project](https://img.shields.io/clojars/v/dev.gethop/user-manager.cognito.svg)](https://clojars.org/dev.gethop/user-manager.cognito)
 # user-manager.cognito
 
 A Library for interacting with the [AWS Cognito User Pools API](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_Operations.html) which optionally provides [Integrant](https://github.com/weavejester/integrant) initialization keys for the [Duct](https://github.com/duct-framework/duct) framework.
@@ -19,6 +21,8 @@ A Library for interacting with the [AWS Cognito User Pools API](https://docs.aws
   * [Deleting an user](#deleting-an-user)
 
 ## Installation
+
+[![Clojars Project](https://clojars.org/dev.gethop/user-manager.cognito/latest-version.svg)](https://clojars.org/dev.gethop/user-manager.cognito)
 
 ## Usage
 
