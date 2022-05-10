@@ -3,6 +3,7 @@
   :url "https://github.com/gethop-dev/user-manager.cognito"
   :license {:name "Mozilla Public Licence 2.0"
             :url "https://www.mozilla.org/en-US/MPL/2.0/"}
+  :min-lein-version "2.9.8"
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [com.cognitect.aws/api "0.8.539"]
                  [com.cognitect.aws/endpoints "1.1.12.206"]
@@ -24,7 +25,7 @@
                          :port 4001}}
    :profiles/dev {}
    :project/dev {:plugins [[jonase/eastwood "1.2.3"]
-                           [lein-cljfmt "0.6.2"]]
+                           [lein-cljfmt "0.8.0"]]
                  :dependencies [[com.cognitect.aws/sts "822.2.1109.0"]]
                  :eastwood {:linters [:all]
                             :source-paths ["src"]
