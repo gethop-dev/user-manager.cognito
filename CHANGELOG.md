@@ -8,5 +8,5 @@ All notable changes to this project will be documented in this file. This change
 ### Added
 - Initial version of the library.
 
-[UNRELEASED]:  https://github.com/magnetcoop/buddy-auth.jwt-oidc/compare/v0.1.0...HEAD
+[UNRELEASED]:  https://github.com/gethop-dev/user-manager.cognito/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/gethop-dev/user-manager.cognito/releases/tag/v0.1.0
