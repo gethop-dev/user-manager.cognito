@@ -1,4 +1,4 @@
-(defproject dev.gethop/user-manager.cognito "0.1.1"
+(defproject dev.gethop/user-manager.cognito "0.1.2-SNAPSHOT"
   :description "A library for interacting with the AWS Cognito User Pools API"
   :url "https://github.com/gethop-dev/user-manager.cognito"
   :license {:name "Mozilla Public Licence 2.0"
