@@ -4,11 +4,11 @@
   :license {:name "Mozilla Public Licence 2.0"
             :url "https://www.mozilla.org/en-US/MPL/2.0/"}
   :min-lein-version "2.9.8"
-  :dependencies [[org.clojure/clojure "1.10.3"]
-                 [com.cognitect.aws/api "0.8.539"]
-                 [com.cognitect.aws/endpoints "1.1.12.206"]
-                 [com.cognitect.aws/cognito-idp "821.2.1107.0"]
-                 [camel-snake-kebab "0.4.2"]
+  :dependencies [[org.clojure/clojure "1.11.1"]
+                 [com.cognitect.aws/api "0.8.620"]
+                 [com.cognitect.aws/endpoints "1.1.12.353"]
+                 [com.cognitect.aws/cognito-idp "825.2.1250.0"]
+                 [camel-snake-kebab "0.4.3"]
                  [integrant "0.8.0"]]
   :repl-options {:init-ns dev.gethop.user-manager.cognito}
   :deploy-repositories [["snapshots" {:sign-releases false
@@ -24,9 +24,9 @@
    :repl {:repl-options {:host "0.0.0.0"
                          :port 4001}}
    :profiles/dev {}
-   :project/dev {:plugins [[jonase/eastwood "1.2.3"]
-                           [lein-cljfmt "0.8.0"]]
-                 :dependencies [[com.cognitect.aws/sts "822.2.1109.0"]]
+   :project/dev {:plugins [[jonase/eastwood "1.3.0"]
+                           [lein-cljfmt "0.9.0"]]
+                 :dependencies [[com.cognitect.aws/sts "825.2.1262.0"]]
                  :eastwood {:linters [:all]
                             :source-paths ["src"]
                             :test-paths ["test"]
